@@ -33,14 +33,15 @@ const GlobalStyles = createGlobalStyle`
   */
   
   html {
-    --color-cyan:  hsl(180, 66%, 49%);
-    --color-dark-violet: hsl(257, 27%, 26%);
-    --color-red:hsl(0, 87%, 67%);
-    --color-gray: hsl(0, 0%, 75%);
-    --color-grayish-violet: hsl(257, 7%, 63%);
-    --color-very-dark-blue: hsl(255, 11%, 22%);
-    --color-very-dark-violet: hsl(260, 8%, 14%);
-    --color-white: hsl(0, 0%, 100%);
+    --color-primary-21: hsl(257, 11%, 21%);
+    --color-primary-26: hsl(257, 27%, 26%);
+    --color-primary-33: hsl(257, 26%, 33%);
+    --color-primary-63: hsl(257, 8%, 63%);
+    --color-primary-95: hsl(255, 32%, 95%);
+
+    --color-secondary-49: hsl(180, 66%, 49%);
+
+    --color-white: hsl(0, 0%, 100%)
   }
 
   body {

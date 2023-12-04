@@ -9,7 +9,7 @@ function Heading1({ children }) {
 const Heading = styled.h1`
   font-size: ${42 / 16}rem;
   font-weight: 700;
-  color: ${COLORS.VeryDarkBlue};
+  color: ${COLORS.Primary21};
 `;
 
 export default Heading1;

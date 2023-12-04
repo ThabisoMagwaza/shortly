@@ -78,7 +78,7 @@ const HeroImageWrapper = styled.div`
 const HeroText = styled.p`
   margin-top: 16px;
   margin-bottom: 32px;
-  color: ${COLORS.GrayishViolet};
+  color: ${COLORS.Primary63};
 `;
 
 const HeroImage = styled(Image)`
@@ -98,7 +98,7 @@ const NavigationWrapper = styled(MaxWidthWrapper)`
 
 const MenuStyled = styled(Menu)`
   stroke-linecap: square;
-  color: ${COLORS.GrayishViolet};
+  color: ${COLORS.Primary63};
 `;
 
 export default Header;

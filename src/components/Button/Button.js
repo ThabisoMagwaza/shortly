@@ -12,7 +12,7 @@ const Wrapper = styled.button`
   font-weight: 700;
 
   border: none;
-  background: ${COLORS.Cyan};
+  background: ${COLORS.Secondary49};
 
   height: ${56 / 16}rem;
 
