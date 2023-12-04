@@ -6,4 +6,5 @@ export const COLORS = {
   Primary63: 'var(--color-primary-63)',
   Primary95: 'var(--color-primary-95)',
   White: 'var(--color-white)',
+  Gray59: 'var(--color-gray-59)',
 };

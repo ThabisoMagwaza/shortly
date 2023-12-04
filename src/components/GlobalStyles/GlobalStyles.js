@@ -41,7 +41,8 @@ const GlobalStyles = createGlobalStyle`
 
     --color-secondary-49: hsl(180, 66%, 49%);
 
-    --color-white: hsl(0, 0%, 100%)
+    --color-white: hsl(0, 0%, 100%);
+    --color-gray-59: hsl(0, 0%, 85%);
   }
 
   body {
