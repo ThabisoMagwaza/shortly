@@ -17,10 +17,7 @@ const GlobalStyles = createGlobalStyle`
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
   }
-  img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
-  }
+
   input, button, textarea, select {
     font: inherit;
   }
@@ -43,6 +40,7 @@ const GlobalStyles = createGlobalStyle`
     --color-grayish-violet: hsl(257, 7%, 63%);
     --color-very-dark-blue: hsl(255, 11%, 22%);
     --color-very-dark-violet: hsl(260, 8%, 14%);
+    --color-white: hsl(0, 0%, 100%);
   }
 
   body {
