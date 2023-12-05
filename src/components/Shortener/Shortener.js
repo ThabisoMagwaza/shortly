@@ -1,34 +1,25 @@
 'use client';
+import React from 'react';
+
 import styled from 'styled-components';
+import { COLORS } from '@/utils/constants';
+
 import UrlShortener from '../UrlShortener';
 import MaxWidthWrapper from '../MaxWidthWrapper';
-import { COLORS } from '@/utils/constants';
 import UrlRack from '../UrlRack';
 
-const URLs = [
-  {
-    id: 1,
-    long: 'https://www.frontendmentor.io',
-    short: 'https://rel.ink/k4lKyk',
-  },
-  {
-    id: 2,
-    long: 'https://twitter.com/frontendmentor',
-    short: 'https://rel.ink/gxOXp9',
-  },
-  {
-    id: 3,
-    long: 'https://www.linkedin.com/company/frontend-mentor',
-    short: 'https://rel.ink/k4lKyk	',
-  },
-];
-
 function Shortener() {
+  const [urls, setUrls] = React.useState([]);
+
+  const save = (url) => {
+    setUrls((prev) => [...prev, url]);
+  };
+
   return (
     <Wrapper>
       <ShortnerWrapper>
-        <UrlShortener />
-        <UrlRack urls={URLs} />
+        <UrlShortener save={save} />
+        <UrlRack urls={urls} />
       </ShortnerWrapper>
     </Wrapper>
   );

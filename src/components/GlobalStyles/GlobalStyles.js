@@ -40,6 +40,10 @@ const GlobalStyles = createGlobalStyle`
     --color-primary-95: hsl(255, 32%, 95%);
 
     --color-secondary-49: hsl(180, 66%, 49%);
+    --color-secondary-75: hsl(180, 66%, 75%);
+
+    --color-accent-67: hsl(0, 86% ,67%);
+    --color-accent-87: hsl(0, 86% ,87%);
 
     --color-white: hsl(0, 0%, 100%);
     --color-gray-59: hsl(0, 0%, 85%);
