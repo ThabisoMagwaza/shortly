@@ -11,8 +11,27 @@ import UrlRack from '../UrlRack';
 function Shortener() {
   const [urls, setUrls] = React.useState([]);
 
+  React.useEffect(() => {
+    try {
+      const savedString = localStorage.getItem('shortUrls');
+
+      const savedUrls = JSON.parse(savedString);
+
+      if (!Array.isArray(savedUrls)) {
+        return;
+      }
+
+      return setUrls(savedUrls);
+    } catch (error) {
+      return;
+    }
+  }, []);
+
   const save = (url) => {
-    setUrls((prev) => [...prev, url]);
+    const nextUrls = [...urls, url];
+    setUrls(nextUrls);
+
+    localStorage.setItem('shortUrls', JSON.stringify(nextUrls));
   };
 
   return (
