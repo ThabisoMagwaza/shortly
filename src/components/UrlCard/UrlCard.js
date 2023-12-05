@@ -1,8 +1,9 @@
 'use client';
 import React from 'react';
+import styled from 'styled-components';
 
 import { COLORS } from '@/utils/constants';
-import styled from 'styled-components';
+import { copyToClipboard } from '@/utils/utility';
 
 function UrlCard({ url, copied, setCopied }) {
   const { long, short, id } = url;
@@ -10,7 +11,14 @@ function UrlCard({ url, copied, setCopied }) {
   const text = (copied && 'Copied') || 'Copy';
   const background = (copied && COLORS.Primary26) || COLORS.Secondary49;
 
-  const copyUrl = () => {
+  const copyUrl = async () => {
+    const copied = await copyToClipboard(short);
+
+    if (!copied) {
+      alert('Error copying to clipboard!');
+      return;
+    }
+
     setCopied(id);
   };
 
