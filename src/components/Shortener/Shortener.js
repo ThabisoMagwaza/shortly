@@ -48,6 +48,7 @@ const ShortnerWrapper = styled(MaxWidthWrapper)`
   display: flex;
   flex-direction: column;
   gap: 24px;
+  padding-bottom: 0px;
 `;
 
 const Wrapper = styled.section`
