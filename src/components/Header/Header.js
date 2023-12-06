@@ -8,17 +8,13 @@ import { COLORS } from '@/utils/constants';
 import MaxWidthWrapper from '../MaxWidthWrapper';
 import Heading1 from '../Heading1';
 import Button from '../Button';
+import Logo from '../Logo';
 
 function Header() {
   return (
     <header>
       <NavigationWrapper>
-        <Image
-          width={121}
-          height={33}
-          src="/images/logo.svg"
-          alt="Shorty logo"
-        />
+        <Logo />
 
         <MenuStyled size={30} strokeWidth={2} />
       </NavigationWrapper>
