@@ -2,13 +2,14 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 
-import { Menu } from 'react-feather';
+import { Menu, X } from 'react-feather';
 import { COLORS } from '@/utils/constants';
 
 import MaxWidthWrapper from '../MaxWidthWrapper';
 import Heading1 from '../Heading1';
 import Button from '../Button';
 import Logo from '../Logo';
+import MobileMenu from '../MobileMenu';
 
 function Header() {
   return (
@@ -16,7 +17,12 @@ function Header() {
       <NavigationWrapper>
         <Logo />
 
-        <MenuStyled size={30} strokeWidth={2} />
+        <MobileMenu>
+          <MenuButton>
+            <MenuStyled id="open" size={30} strokeWidth={2} />
+            <Close id="close" size={30} strokeWidth={2} />
+          </MenuButton>
+        </MobileMenu>
       </NavigationWrapper>
 
       <HeroWrapper>
@@ -42,6 +48,22 @@ function Header() {
     </header>
   );
 }
+
+const MenuButton = styled.button`
+  display: block;
+  border: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+
+  &[data-state='closed'] > #close {
+    display: none;
+  }
+
+  &[data-state='open'] > #open {
+    display: none;
+  }
+`;
 
 const HeroWrapper = styled(MaxWidthWrapper)`
   display: flex;
@@ -93,8 +115,13 @@ const NavigationWrapper = styled(MaxWidthWrapper)`
 `;
 
 const MenuStyled = styled(Menu)`
+  display: block;
   stroke-linecap: square;
   color: ${COLORS.Primary63};
 `;
 
+const Close = styled(X)`
+  display: block;
+  color: ${COLORS.Primary63};
+`;
 export default Header;
