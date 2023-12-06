@@ -1,9 +1,10 @@
 'use client';
 import Image from 'next/image';
+import Link from 'next/link';
 import styled from 'styled-components';
 
 import { Menu, X } from 'react-feather';
-import { COLORS } from '@/utils/constants';
+import { COLORS, QUERIES } from '@/utils/constants';
 
 import MaxWidthWrapper from '../MaxWidthWrapper';
 import Heading1 from '../Heading1';
@@ -16,6 +17,26 @@ function Header() {
     <header>
       <NavigationWrapper>
         <Logo />
+
+        <DestktoNav>
+          <Navigation>
+            <li>
+              <NavLink href="/">Features</NavLink>
+            </li>
+            <li>
+              <NavLink href="/">Pricing</NavLink>
+            </li>
+            <li>
+              <NavLink href="/">Resources</NavLink>
+            </li>
+            <LoginWrapper>
+              <NavLink href="/">Login</NavLink>
+            </LoginWrapper>
+            <li>
+              <SignUpLink href="/">Sign Up</SignUpLink>
+            </li>
+          </Navigation>
+        </DestktoNav>
 
         <MobileMenu>
           <MenuButton>
@@ -49,6 +70,53 @@ function Header() {
   );
 }
 
+const LoginWrapper = styled.li`
+  margin-left: auto;
+`;
+
+const DestktoNav = styled.nav`
+  flex: 1;
+  display: none;
+
+  @media ${QUERIES.phoneAndUp} {
+    display: revert;
+  }
+`;
+
+const Navigation = styled.li`
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin-left: 32px;
+
+  align-items: baseline;
+
+  @media ${QUERIES.tabletAndUp} {
+    gap: 32px;
+    margin-left: 46px;
+  }
+`;
+
+const NavLink = styled(Link)`
+  text-decoration: none;
+  font-size: ${15 / 16}rem;
+  color: ${COLORS.Primary63};
+  font-weight: 700;
+`;
+
+const SignUpLink = styled(NavLink)`
+  background: ${COLORS.Secondary49};
+  padding: 0 24px;
+  height: 40px;
+  color: ${COLORS.White};
+
+  border-radius: 1000px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const MenuButton = styled.button`
   display: block;
   border: none;
@@ -64,6 +132,10 @@ const MenuButton = styled.button`
   }
 
   &[data-state='open'] > #open {
+    display: none;
+  }
+
+  @media ${QUERIES.phoneAndUp} {
     display: none;
   }
 `;
@@ -115,6 +187,7 @@ const NavigationWrapper = styled(MaxWidthWrapper)`
   padding-top: 40px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 const MenuStyled = styled(Menu)`

@@ -14,3 +14,15 @@ export const COLORS = {
   Gray59: 'var(--color-gray-59)',
   Gray75: 'var(--color-gray-75)',
 };
+
+const BREAKPOINTS = {
+  phone: 650,
+  tablet: 950,
+  laptop: 1300,
+};
+
+export const QUERIES = {
+  phoneAndUp: `(min-width: ${BREAKPOINTS.phone / 16}rem)`,
+  tabletAndUp: `(min-width: ${BREAKPOINTS.tablet / 16}rem)`,
+  laptopAndUp: `(min-width: ${BREAKPOINTS.laptop / 16}rem)`,
+};
