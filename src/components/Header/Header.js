@@ -56,6 +56,9 @@ const MenuButton = styled.button`
   margin: 0;
   padding: 0;
 
+  padding: 24px;
+  margin: -24px;
+
   &[data-state='closed'] > #close {
     display: none;
   }

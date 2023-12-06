@@ -5,6 +5,7 @@ export const COLORS = {
   Primary21: 'var(--color-primary-21)',
   Primary26: 'var(--color-primary-26)',
   Primary33: 'var(--color-primary-33)',
+  Primary40: 'var(--color-primary-40)',
   Primary63: 'var(--color-primary-63)',
   Primary95: 'var(--color-primary-95)',
   Accent67: 'var(--color-accent-67)',

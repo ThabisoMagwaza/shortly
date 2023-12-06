@@ -37,6 +37,7 @@ const GlobalStyles = createGlobalStyle`
     --color-primary-21: hsl(257, 11%, 21%);
     --color-primary-26: hsl(257, 27%, 26%);
     --color-primary-33: hsl(257, 26%, 33%);
+    --color-primary-40: hsl(257, 8%, 40%);
     --color-primary-63: hsl(257, 8%, 63%);
     --color-primary-95: hsl(255, 32%, 95%);
 
