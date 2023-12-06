@@ -1,6 +1,7 @@
 export const COLORS = {
   Secondary49: 'var(--color-secondary-49)',
   Secondary75: 'var(--color-secondary-75)',
+  Primary14: 'var(--color-primary-14)',
   Primary21: 'var(--color-primary-21)',
   Primary26: 'var(--color-primary-26)',
   Primary33: 'var(--color-primary-33)',
@@ -10,4 +11,5 @@ export const COLORS = {
   Accent87: 'var(--color-accent-87)',
   White: 'var(--color-white)',
   Gray59: 'var(--color-gray-59)',
+  Gray75: 'var(--color-gray-75)',
 };

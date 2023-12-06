@@ -33,6 +33,7 @@ const GlobalStyles = createGlobalStyle`
   */
   
   html {
+    --color-primary-14: hsl(257, 8%, 14%);
     --color-primary-21: hsl(257, 11%, 21%);
     --color-primary-26: hsl(257, 27%, 26%);
     --color-primary-33: hsl(257, 26%, 33%);
@@ -47,6 +48,7 @@ const GlobalStyles = createGlobalStyle`
 
     --color-white: hsl(0, 0%, 100%);
     --color-gray-59: hsl(0, 0%, 85%);
+    --color-gray-75: hsl(0, 0%, 75%);
   }
 
   body {
