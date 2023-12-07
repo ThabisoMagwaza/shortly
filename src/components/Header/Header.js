@@ -83,7 +83,7 @@ const DestktoNav = styled.nav`
   }
 `;
 
-const Navigation = styled.li`
+const Navigation = styled.ul`
   list-style: none;
   display: flex;
   gap: 24px;
