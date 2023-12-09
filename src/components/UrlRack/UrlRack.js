@@ -1,6 +1,8 @@
 'use client';
 import React from 'react';
 
+import { QUERIES } from '@/utils/constants';
+
 import styled from 'styled-components';
 import UrlCard from '../UrlCard';
 
@@ -25,6 +27,10 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
+
+  @media ${QUERIES.tabletAndUp} {
+    gap: 16px;
+  }
 `;
 
 export default UrlRack;

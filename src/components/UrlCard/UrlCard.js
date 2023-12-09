@@ -2,7 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { COLORS } from '@/utils/constants';
+import { COLORS, QUERIES } from '@/utils/constants';
 import { copyToClipboard } from '@/utils/utility';
 
 function UrlCard({ url, copied, setCopied }) {
@@ -24,13 +24,13 @@ function UrlCard({ url, copied, setCopied }) {
 
   return (
     <Wrapper>
-      <Header>
+      <LongUrl>
         <LongLink href={long} target="__blank" rel="noopenner, noreferrer">
           {long}
         </LongLink>
-      </Header>
+      </LongUrl>
 
-      <Content>
+      <ShortUrl>
         <ShortLink href={short} target="__blank" rel="noopenner, noreferrer">
           {short}
         </ShortLink>
@@ -43,7 +43,7 @@ function UrlCard({ url, copied, setCopied }) {
         >
           {text}
         </Button>
-      </Content>
+      </ShortUrl>
     </Wrapper>
   );
 }
@@ -69,15 +69,25 @@ const Button = styled.button`
 
   border: none;
   background: var(--background);
+
+  padding: 0 32px;
 `;
 
 const Wrapper = styled.div`
   background: ${COLORS.White};
   padding: 16px;
   border-radius: 5px;
+
+  @media ${QUERIES.tabletAndUp} {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: ${18 / 16}rem ${32 / 16}rem;
+  }
 `;
 
-const Header = styled.header`
+const LongUrl = styled.div`
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -87,9 +97,14 @@ const Header = styled.header`
 
   height: 48px;
   border-bottom: 1px solid ${COLORS.Gray59};
+
+  @media ${QUERIES.tabletAndUp} {
+    border: none;
+    height: revert;
+  }
 `;
 
-const Content = styled.div`
+const ShortUrl = styled.div`
   padding-top: 16px;
   display: flex;
   flex-direction: column;
@@ -100,6 +115,14 @@ const Content = styled.div`
   overflow: hidden;
 
   justify-content: space-between;
+
+  @media ${QUERIES.tabletAndUp} {
+    padding-top: 0;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    height: revert;
+  }
 `;
 
 export default UrlCard;
