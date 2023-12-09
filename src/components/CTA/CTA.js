@@ -1,6 +1,6 @@
 'use client';
 import styled from 'styled-components';
-import { COLORS } from '@/utils/constants';
+import { COLORS, QUERIES } from '@/utils/constants';
 
 import Heading2 from '../Heading2';
 import Button from '../Button';
@@ -19,12 +19,18 @@ const Wrapper = styled.div`
   background-color: ${COLORS.Primary26};
 
   background-image: url('/images/bg-boost-mobile.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 16px;
+
+  @media ${QUERIES.phoneAndUp} {
+    background-image: url('/images/bg-boost-desktop.svg');
+  }
 `;
 
 export default CTA;
