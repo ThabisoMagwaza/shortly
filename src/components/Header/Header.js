@@ -198,9 +198,7 @@ const HeroText = styled.p`
   margin-top: 16px;
   color: ${COLORS.Primary63};
 
-  @media ${QUERIES.phoneAndUp} {
-    margin-bottom: 32px;
-  }
+  margin-bottom: 32px;
 
   @media ${QUERIES.phoneAndUp} {
     margin-bottom: 38px;
