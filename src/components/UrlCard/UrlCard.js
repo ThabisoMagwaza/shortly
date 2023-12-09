@@ -10,6 +10,7 @@ function UrlCard({ url, copied, setCopied }) {
 
   const text = (copied && 'Copied') || 'Copy';
   const background = (copied && COLORS.Primary26) || COLORS.Secondary49;
+  const backgroundHover = (copied && COLORS.Primary33) || COLORS.Secondary75;
 
   const copyUrl = async () => {
     const copied = await copyToClipboard(short);
@@ -39,6 +40,7 @@ function UrlCard({ url, copied, setCopied }) {
           onClick={copyUrl}
           style={{
             '--background': background,
+            '--background-hover': backgroundHover,
           }}
         >
           {text}
@@ -70,7 +72,15 @@ const Button = styled.button`
   border: none;
   background: var(--background);
 
-  padding: 0 32px;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--background-hover);
+  }
+
+  @media ${QUERIES.phoneAndUp} {
+    width: ${130 / 16}rem;
+  }
 `;
 
 const Wrapper = styled.div`

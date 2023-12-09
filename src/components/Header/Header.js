@@ -106,6 +106,10 @@ const NavLink = styled(Link)`
   font-size: ${15 / 16}rem;
   color: ${COLORS.Primary63};
   font-weight: 700;
+
+  &:hover {
+    color: ${COLORS.Primary21};
+  }
 `;
 
 const SignUpLink = styled(NavLink)`
@@ -119,6 +123,11 @@ const SignUpLink = styled(NavLink)`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &:hover {
+    color: ${COLORS.White};
+    background: ${COLORS.Secondary75};
+  }
 `;
 
 const MenuButton = styled.button`

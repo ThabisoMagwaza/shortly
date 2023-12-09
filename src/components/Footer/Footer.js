@@ -5,6 +5,10 @@ import Image from 'next/image';
 
 import { COLORS, QUERIES } from '@/utils/constants';
 import Logo from '../Logo';
+import Facebook from '../Facebook';
+import Twitter from '../Twitter';
+import Pintrest from '../Pintrest';
+import Instagram from '../Instagram';
 
 function Footer() {
   return (
@@ -63,42 +67,22 @@ function Footer() {
         <SocialLinks>
           <li>
             <SocialLink href="/">
-              <Image
-                src="/images/icon-facebook.svg"
-                width={24}
-                height={24}
-                alt="Facebook icon - Link to Facebook"
-              />
+              <Facebook />
             </SocialLink>
           </li>
           <li>
             <SocialLink href="/">
-              <Image
-                src="/images/icon-twitter.svg"
-                width={24}
-                height={20}
-                alt="Twitter icon - Link to Twitter"
-              />
+              <Twitter />
             </SocialLink>
           </li>
           <li>
             <SocialLink href="/">
-              <Image
-                src="/images/icon-pinterest.svg"
-                width={24}
-                height={24}
-                alt="Pintest icon - Link to Pintest"
-              />
+              <Pintrest />
             </SocialLink>
           </li>
           <li>
             <SocialLink href="/">
-              <Image
-                src="/images/icon-instagram.svg"
-                width={24}
-                height={24}
-                alt="Instagram icon - Link to Instagram"
-              />
+              <Instagram />
             </SocialLink>
           </li>
         </SocialLinks>
@@ -131,7 +115,7 @@ const Wrapper = styled.footer`
 
 const OuterNavWrapper = styled.div`
   display: flex;
-  flex: 1.8;
+  flex: 2;
   flex-direction: column;
   gap: 40px;
 
@@ -170,6 +154,10 @@ const NavLink = styled(Link)`
   text-decoration: none;
   color: ${COLORS.Gray75};
   font-size: ${15 / 16}rem;
+
+  &:hover {
+    color: ${COLORS.Secondary49};
+  }
 `;
 
 const SocialLinks = styled.ul`
@@ -184,6 +172,11 @@ const SocialLinks = styled.ul`
 
 const SocialLink = styled(Link)`
   text-decoration: none;
+  color: ${COLORS.White};
+
+  &:hover {
+    color: ${COLORS.Secondary49};
+  }
 `;
 
 export default Footer;

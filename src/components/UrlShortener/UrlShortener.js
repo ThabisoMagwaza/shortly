@@ -165,6 +165,11 @@ const Button = styled.button`
 
   flex-basis: 150px;
   flex-grow: 1;
+  cursor: pointer;
+
+  &:hover {
+    background: ${COLORS.Secondary75};
+  }
 
   @media ${QUERIES.tabletAndUp} {
     height: ${64 / 16}rem;
