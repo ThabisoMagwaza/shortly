@@ -14,7 +14,7 @@ import MobileMenu from '../MobileMenu';
 
 function Header() {
   return (
-    <header>
+    <HeaderWrapper>
       <NavigationWrapper>
         <Logo />
 
@@ -66,9 +66,13 @@ function Header() {
           <Button>Get started</Button>
         </HeroContent>
       </HeroWrapper>
-    </header>
+    </HeaderWrapper>
   );
 }
+
+const HeaderWrapper = styled.header`
+  overflow: hidden;
+`;
 
 const LoginWrapper = styled.li`
   margin-left: auto;
@@ -143,11 +147,17 @@ const MenuButton = styled.button`
 const HeroWrapper = styled(MaxWidthWrapper)`
   display: flex;
   flex-direction: row-reverse;
+  align-items: center;
 
   flex-wrap: wrap;
   gap: 40px;
 
+  margin-top: 38px;
   margin-bottom: 168px;
+
+  @media ${QUERIES.tabletAndUp} {
+    gap: 70px;
+  }
 `;
 
 const HeroContent = styled.div`
@@ -159,19 +169,29 @@ const HeroContent = styled.div`
   flex: 1;
 
   min-width: 300px;
+
+  @media (min-width: 714px) {
+    text-align: start;
+    align-items: start;
+    flex: 1.5;
+  }
 `;
 
 const HeroImageWrapper = styled.div`
   min-width: 350px;
   min-height: 337px;
   margin-right: -24px;
-  flex: 2;
+  flex: 1;
 `;
 
 const HeroText = styled.p`
   margin-top: 16px;
   margin-bottom: 32px;
   color: ${COLORS.Primary63};
+
+  @media ${QUERIES.tabletAndUp} {
+    font-size: ${22 / 16}rem;
+  }
 `;
 
 const HeroImage = styled(Image)`
@@ -181,6 +201,14 @@ const HeroImage = styled(Image)`
 
   width: 100%;
   height: 100%;
+
+  min-height: 337px;
+
+  @media ${QUERIES.tabletAndUp} {
+    width: revert;
+    height: revert;
+    min-height: revert;
+  }
 `;
 
 const NavigationWrapper = styled(MaxWidthWrapper)`
