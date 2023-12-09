@@ -78,8 +78,9 @@ const Wrapper = styled.div`
   padding: 16px;
   border-radius: 5px;
 
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.phoneAndUp} {
     display: flex;
+    gap: 16px;
     align-items: center;
     justify-content: space-between;
 
@@ -98,7 +99,7 @@ const LongUrl = styled.div`
   height: 48px;
   border-bottom: 1px solid ${COLORS.Gray59};
 
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.phoneAndUp} {
     border: none;
     height: revert;
   }
@@ -116,7 +117,7 @@ const ShortUrl = styled.div`
 
   justify-content: space-between;
 
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.phoneAndUp} {
     padding-top: 0;
     flex-direction: row;
     align-items: center;

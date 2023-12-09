@@ -74,7 +74,7 @@ const DecoratorLine = styled.div`
   inset: 0;
   margin: 0 auto;
 
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.phoneAndUp} {
     width: revert;
     margin: auto 0;
     height: 8px;
@@ -93,7 +93,7 @@ const FeaturesList = styled.div`
   align-items: center;
   gap: calc(44px + 48px);
 
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.phoneAndUp} {
     flex-direction: row;
     gap: 30px;
     align-items: flex-start;
@@ -109,7 +109,7 @@ const ContentWrapper = styled(MaxWidthWrapper)`
   padding-bottom: 80px;
   text-align: center;
 
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.phoneAndUp} {
     padding-top: 120px;
     padding-bottom: 120px;
   }
@@ -131,7 +131,7 @@ const HeaderWrapper = styled.div`
 
   max-width: ${540 / 16}rem;
 
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.phoneAndUp} {
     margin-bottom: calc(44px + 56px);
   }
 `;

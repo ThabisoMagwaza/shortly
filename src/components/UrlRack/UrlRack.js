@@ -28,7 +28,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   gap: 24px;
 
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.phoneAndUp} {
     gap: 16px;
   }
 `;
