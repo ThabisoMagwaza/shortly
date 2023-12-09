@@ -67,25 +67,25 @@ function Footer() {
 
         <SocialLinks>
           <li>
-            <SocialLink href="/">
+            <SocialLink href="/" aria-label="Link to Facebook">
               <Facebook />
               <VisuallyHidden>Link to Facebook</VisuallyHidden>
             </SocialLink>
           </li>
           <li>
-            <SocialLink href="/">
+            <SocialLink href="/" aria-label="Link to Twitter">
               <Twitter />
               <VisuallyHidden>Link to Twitter</VisuallyHidden>
             </SocialLink>
           </li>
           <li>
-            <SocialLink href="/">
+            <SocialLink href="/" aria-label="Link to Pintrest">
               <Pintrest />
               <VisuallyHidden>Link to Pintrest</VisuallyHidden>
             </SocialLink>
           </li>
           <li>
-            <SocialLink href="/">
+            <SocialLink href="/" aria-label="Link to Instagram">
               <Instagram />
               <VisuallyHidden>Link to Instagram</VisuallyHidden>
             </SocialLink>
