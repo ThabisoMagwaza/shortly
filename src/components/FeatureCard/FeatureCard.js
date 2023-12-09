@@ -1,8 +1,8 @@
 'use client';
 import styled from 'styled-components';
 
+import { COLORS, QUERIES } from '@/utils/constants';
 import Heading3 from '../Heading3';
-import { COLORS } from '@/utils/constants';
 
 function FeatureCard({ icon, heading, text }) {
   return (
@@ -16,7 +16,10 @@ function FeatureCard({ icon, heading, text }) {
 }
 
 const IconWrapper = styled.div`
-  margin-top: calc(-32px - (88px / 2));
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(32px, -50%);
 
   width: 88px;
   height: 88px;
@@ -36,8 +39,10 @@ const Text = styled.p`
 `;
 
 const Wrapper = styled.div`
+  position: relative;
   background: ${COLORS.White};
   padding: 32px;
+  padding-top: 77px;
 
   display: flex;
   flex-direction: column;
@@ -47,6 +52,21 @@ const Wrapper = styled.div`
   border-radius: 5px;
 
   position: relative;
+
+  @media ${QUERIES.tabletAndUp} {
+    width: ${350 / 16}rem;
+    height: ${267 / 16}rem;
+
+    text-align: start;
+    align-items: flex-start;
+
+    &:nth-of-type(3) {
+      margin-top: 44px;
+    }
+    &:nth-of-type(4) {
+      margin-top: 88px;
+    }
+  }
 `;
 
 export default FeatureCard;

@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 
-import { COLORS } from '@/utils/constants';
+import { COLORS, QUERIES } from '@/utils/constants';
 
 import Heading2 from '../Heading2';
 import MaxWidthWrapper from '../MaxWidthWrapper';
@@ -11,55 +11,57 @@ import FeatureCard from '../FeatureCard';
 function Features() {
   return (
     <Wrapper>
-      <HeaderWrapper>
-        <Heading2>Advanced Statistics</Heading2>
-        <SubHeading>
-          Track how your links are performing across the web with our advanced
-          statistics dashboard.
-        </SubHeading>
-      </HeaderWrapper>
+      <ContentWrapper>
+        <HeaderWrapper>
+          <Heading2>Advanced Statistics</Heading2>
+          <SubHeading>
+            Track how your links are performing across the web with our advanced
+            statistics dashboard.
+          </SubHeading>
+        </HeaderWrapper>
 
-      <FeaturesList>
-        <DecoratorLine />
+        <FeaturesList>
+          <DecoratorLine />
 
-        <FeatureCard
-          icon={
-            <Icon
-              src="/images/icon-brand-recognition.svg"
-              width={40}
-              height={40}
-              alt=""
-            />
-          }
-          heading="Brand Recognition"
-          text="Boost your brand recognition with each click. Generic links don't
+          <FeatureCard
+            icon={
+              <Icon
+                src="/images/icon-brand-recognition.svg"
+                width={40}
+                height={40}
+                alt=""
+              />
+            }
+            heading="Brand Recognition"
+            text="Boost your brand recognition with each click. Generic links don't
         mean a thing. Branded links help instil confidence in your content."
-        />
-        <FeatureCard
-          icon={
-            <Icon
-              src="/images/icon-detailed-records.svg"
-              width={40}
-              height={40}
-              alt=""
-            />
-          }
-          heading="Detailed Records"
-          text="Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions."
-        />
-        <FeatureCard
-          icon={
-            <Icon
-              src="/images/icon-fully-customizable.svg"
-              width={48}
-              height={48}
-              alt=""
-            />
-          }
-          heading="Fully Customizable"
-          text="Improve brand awareness and content discoverability through customizable links, supercharging audience engagement."
-        />
-      </FeaturesList>
+          />
+          <FeatureCard
+            icon={
+              <Icon
+                src="/images/icon-detailed-records.svg"
+                width={40}
+                height={40}
+                alt=""
+              />
+            }
+            heading="Detailed Records"
+            text="Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions."
+          />
+          <FeatureCard
+            icon={
+              <Icon
+                src="/images/icon-fully-customizable.svg"
+                width={48}
+                height={48}
+                alt=""
+              />
+            }
+            heading="Fully Customizable"
+            text="Improve brand awareness and content discoverability through customizable links, supercharging audience engagement."
+          />
+        </FeaturesList>
+      </ContentWrapper>
     </Wrapper>
   );
 }
@@ -71,6 +73,12 @@ const DecoratorLine = styled.div`
 
   inset: 0;
   margin: 0 auto;
+
+  @media ${QUERIES.tabletAndUp} {
+    width: revert;
+    margin: auto 0;
+    height: 8px;
+  }
 `;
 
 const Icon = styled(Image)`
@@ -82,14 +90,29 @@ const FeaturesList = styled.div`
 
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: calc(44px + 48px);
+
+  @media ${QUERIES.tabletAndUp} {
+    flex-direction: row;
+    gap: 30px;
+    align-items: flex-start;
+  }
 `;
 
-const Wrapper = styled(MaxWidthWrapper)`
+const Wrapper = styled.div`
+  background: ${COLORS.Primary95};
+`;
+
+const ContentWrapper = styled(MaxWidthWrapper)`
   padding-top: 80px;
   padding-bottom: 80px;
-  background: ${COLORS.Primary95};
   text-align: center;
+
+  @media ${QUERIES.tabletAndUp} {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
 `;
 
 const SubHeading = styled.p`
@@ -103,6 +126,14 @@ const HeaderWrapper = styled.div`
   gap: 16px;
 
   margin-bottom: calc(44px + 48px);
+  margin-left: auto;
+  margin-right: auto;
+
+  max-width: ${540 / 16}rem;
+
+  @media ${QUERIES.tabletAndUp} {
+    margin-bottom: calc(44px + 56px);
+  }
 `;
 
 export default Features;

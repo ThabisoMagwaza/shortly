@@ -153,9 +153,10 @@ const HeroWrapper = styled(MaxWidthWrapper)`
   gap: 40px;
 
   margin-top: 38px;
-  margin-bottom: 168px;
+  padding-bottom: 168px;
 
   @media ${QUERIES.tabletAndUp} {
+    padding-bottom: 222px;
     gap: 70px;
   }
 `;
@@ -186,10 +187,14 @@ const HeroImageWrapper = styled.div`
 
 const HeroText = styled.p`
   margin-top: 16px;
-  margin-bottom: 32px;
   color: ${COLORS.Primary63};
 
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.phoneAndUp} {
+    margin-bottom: 32px;
+  }
+
+  @media ${QUERIES.phoneAndUp} {
+    margin-bottom: 38px;
     font-size: ${22 / 16}rem;
   }
 `;
