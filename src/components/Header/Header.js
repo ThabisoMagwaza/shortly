@@ -165,7 +165,7 @@ const HeroWrapper = styled(MaxWidthWrapper)`
   padding-bottom: 168px;
 
   @media ${QUERIES.tabletAndUp} {
-    padding-bottom: 222px;
+    padding-bottom: 152px;
     gap: 70px;
   }
 `;
