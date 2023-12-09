@@ -3,13 +3,15 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { COLORS } from '@/utils/constants';
+import { COLORS, QUERIES } from '@/utils/constants';
 import Logo from '../Logo';
 
 function Footer() {
   return (
     <Wrapper>
-      <Logo color={COLORS.White} />
+      <LogoWrapper>
+        <Logo color={COLORS.White} />
+      </LogoWrapper>
 
       <OuterNavWrapper>
         <InnerNavWrapper>
@@ -105,6 +107,10 @@ function Footer() {
   );
 }
 
+const LogoWrapper = styled.div`
+  flex: 1;
+`;
+
 const Wrapper = styled.footer`
   background: ${COLORS.Primary14};
   padding: 56px;
@@ -116,18 +122,35 @@ const Wrapper = styled.footer`
   flex-direction: column;
   align-items: center;
   gap: 48px;
+
+  @media ${QUERIES.tabletAndUp} {
+    flex-direction: row;
+    align-items: flex-start;
+  }
 `;
 
 const OuterNavWrapper = styled.div`
   display: flex;
+  flex: 1.8;
   flex-direction: column;
   gap: 40px;
+
+  @media ${QUERIES.phoneAndUp} {
+    margin-left: auto;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 80px;
+  }
 `;
 
 const InnerNavWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 22px;
+
+  @media ${QUERIES.phoneAndUp} {
+    text-align: start;
+  }
 `;
 
 const NavTitle = styled.h4`
@@ -155,6 +178,8 @@ const SocialLinks = styled.ul`
   align-items: center;
 
   gap: 24px;
+
+  margin-left: auto;
 `;
 
 const SocialLink = styled(Link)`
