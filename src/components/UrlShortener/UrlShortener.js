@@ -2,7 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { COLORS } from '@/utils/constants';
+import { COLORS, QUERIES } from '@/utils/constants';
 
 function UrlShortener({ save }) {
   const [link, setLink] = React.useState('');
@@ -63,31 +63,45 @@ function UrlShortener({ save }) {
 
   return (
     <Wrapper onSubmit={submit}>
-      <div>
-        <Input
+      <ElementsWrapper>
+        <InputWrapper>
+          <Input
+            style={{
+              '--border': (showError && COLORS.Accent67) || 'transparent',
+              '--placeholder': (showError && COLORS.Accent87) || undefined,
+            }}
+            placeholder="Shorten a link here..."
+            value={link}
+            onChange={(e) => setLink(e.target.value)}
+            onBlur={() => setTouched(true)}
+          />
+          {showError && <ErrorMessage>Please add a link</ErrorMessage>}
+        </InputWrapper>
+        <Button
+          disabled={error || submitting}
           style={{
-            '--border': (showError && COLORS.Accent67) || 'transparent',
-            '--placeholder': (showError && COLORS.Accent87) || undefined,
+            '--background':
+              (submitting && COLORS.Secondary75) || COLORS.Secondary49,
           }}
-          placeholder="Shorten a link here..."
-          value={link}
-          onChange={(e) => setLink(e.target.value)}
-          onBlur={() => setTouched(true)}
-        />
-        {showError && <ErrorMessage>Please add a link</ErrorMessage>}
-      </div>
-      <Button
-        disabled={error || submitting}
-        style={{
-          '--background':
-            (submitting && COLORS.Secondary75) || COLORS.Secondary49,
-        }}
-      >
-        {buttonText}
-      </Button>
+        >
+          {buttonText}
+        </Button>
+      </ElementsWrapper>
     </Wrapper>
   );
 }
+
+const ElementsWrapper = styled.div`
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+`;
+
+const InputWrapper = styled.div`
+  flex-basis: 300px;
+  flex-grow: 20;
+`;
 
 const Wrapper = styled.form`
   background-color: ${COLORS.Primary26};
@@ -96,13 +110,24 @@ const Wrapper = styled.form`
   background-position: 100% 0%;
 
   padding: ${24 / 16}rem;
+
   border-radius: 10px;
+
+  margin-top: -104px;
 
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  justify-content: center;
 
-  margin-top: -104px;
+  @media ${QUERIES.phoneAndUp} {
+    height: ${130 / 16}rem;
+    padding: 0 ${32 / 16}rem;
+  }
+
+  @media ${QUERIES.tabletAndUp} {
+    padding: 0 ${64 / 16}rem;
+    height: ${168 / 16}rem;
+  }
 `;
 
 const Input = styled.input`
@@ -120,6 +145,13 @@ const Input = styled.input`
   &::placeholder {
     color: var(--placeholder);
   }
+
+  @media ${QUERIES.tabletAndUp} {
+    height: ${64 / 16}rem;
+    font-size: ${20 / 16}rem;
+    padding: 14px 32px;
+    border-radius: 10px;
+  }
 `;
 
 const Button = styled.button`
@@ -130,6 +162,15 @@ const Button = styled.button`
   background: var(--background);
   font-weight: 700;
   color: ${COLORS.White};
+
+  flex-basis: 150px;
+  flex-grow: 1;
+
+  @media ${QUERIES.tabletAndUp} {
+    height: ${64 / 16}rem;
+
+    font-size: ${20 / 16}rem;
+  }
 `;
 
 const ErrorMessage = styled.p`
@@ -137,6 +178,14 @@ const ErrorMessage = styled.p`
   font-size: ${12 / 16}rem;
   font-style: italic;
   margin-top: 5px;
+
+  @media ${QUERIES.phoneAndUp} {
+    position: absolute;
+  }
+
+  @media ${QUERIES.tabletAndUp} {
+    font-size: 1rem;
+  }
 `;
 
 export default UrlShortener;
