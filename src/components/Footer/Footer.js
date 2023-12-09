@@ -9,6 +9,7 @@ import Facebook from '../Facebook';
 import Twitter from '../Twitter';
 import Pintrest from '../Pintrest';
 import Instagram from '../Instagram';
+import VisuallyHidden from '../VisuallyHidden';
 
 function Footer() {
   return (
@@ -68,21 +69,25 @@ function Footer() {
           <li>
             <SocialLink href="/">
               <Facebook />
+              <VisuallyHidden>Link to Facebook</VisuallyHidden>
             </SocialLink>
           </li>
           <li>
             <SocialLink href="/">
               <Twitter />
+              <VisuallyHidden>Link to Twitter</VisuallyHidden>
             </SocialLink>
           </li>
           <li>
             <SocialLink href="/">
               <Pintrest />
+              <VisuallyHidden>Link to Pintrest</VisuallyHidden>
             </SocialLink>
           </li>
           <li>
             <SocialLink href="/">
               <Instagram />
+              <VisuallyHidden>Link to Instagram</VisuallyHidden>
             </SocialLink>
           </li>
         </SocialLinks>
@@ -137,7 +142,7 @@ const InnerNavWrapper = styled.div`
   }
 `;
 
-const NavTitle = styled.h4`
+const NavTitle = styled.h3`
   color: ${COLORS.White};
   font-size: 16px;
 `;

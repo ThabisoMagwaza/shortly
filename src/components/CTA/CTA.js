@@ -30,6 +30,8 @@ const Wrapper = styled.div`
 
   @media ${QUERIES.phoneAndUp} {
     background-image: url('/images/bg-boost-desktop.svg');
+    height: 250px;
+    gap: 32px;
   }
 `;
 
